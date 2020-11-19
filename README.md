@@ -1,4 +1,4 @@
-# iso-crypto [![npm version](https://badge.fury.io/js/@pedrouid/iso-crypto.svg)](https://badge.fury.io/js/@pedrouid/iso-crypto)
+# iso-crypto [![npm version](https://badge.fury.io/js/%40pedrouid%2Fiso-crypto.svg)](https://badge.fury.io/js/%40pedrouid%2Fiso-crypto)
 
 Isomorphic Cryptography Library for AES, HMAC and SHA2
 
