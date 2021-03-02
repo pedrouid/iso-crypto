@@ -9,11 +9,6 @@ import {
   RIPEMD160_NODE_ALGO,
 } from '../constants';
 
-export function nodeRandomBytes(length: number): Uint8Array {
-  const buf = crypto.randomBytes(length);
-  return bufferToArray(buf);
-}
-
 export function nodeAesEncrypt(
   iv: Uint8Array,
   key: Uint8Array,

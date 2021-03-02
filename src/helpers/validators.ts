@@ -1,4 +1,3 @@
-import { LENGTH_0, MAX_KEY_LENGTH } from './constants';
 import { getBrowerCrypto, getSubtleCrypto } from './env';
 
 export function assert(condition: boolean, message: string): void {
@@ -28,12 +27,4 @@ export function isConstantTime(arr1: Uint8Array, arr2: Uint8Array): boolean {
     res |= arr1[i] ^ arr2[i];
   }
   return res === 0;
-}
-
-export function isValidKeyLength(length: number) {
-  return !(
-    length <= LENGTH_0 ||
-    length > MAX_KEY_LENGTH ||
-    parseInt(String(length)) !== length
-  );
 }

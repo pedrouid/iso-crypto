@@ -12,7 +12,6 @@ import {
   SHA512_BROWSER_ALGO,
   LENGTH_512,
 } from '../constants';
-import { fallbackRandomBytes } from './fallback';
 
 export function getBrowerCrypto(): Crypto {
   // @ts-ignore
@@ -38,14 +37,6 @@ export function getOps(type: string): string[] {
   return type === AES_BROWSER_ALGO
     ? [ENCRYPT_OP, DECRYPT_OP]
     : [SIGN_OP, VERIFY_OP];
-}
-
-export function browserRandomBytes(length: number): Uint8Array {
-  const browserCrypto = getBrowerCrypto();
-  if (typeof browserCrypto.getRandomValues !== 'undefined') {
-    return browserCrypto.getRandomValues(new Uint8Array(length));
-  }
-  return fallbackRandomBytes(length);
 }
 
 export async function browserExportKey(
