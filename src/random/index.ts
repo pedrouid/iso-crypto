@@ -1,5 +1,6 @@
-import * as isoRandom from '@pedrouid/iso-random';
+// import * as isoRandom from '@pedrouid/iso-random';
 
 export function randomBytes(length: number): Uint8Array {
-  return isoRandom.randomBytes(length);
+  // return isoRandom.randomBytes(length);
+  throw new Error('TODO');
 }
