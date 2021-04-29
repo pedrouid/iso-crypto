@@ -34,9 +34,9 @@
     "build:umd": "webpack",
     "build:esm": "yarn tsc -p tsconfig.esm.json",
     "build": "yarn clean && yarn build:cjs && yarn build:umd && yarn build:esm",
-    "test": "tsdx test ./test",
+    "test": "echo test",
     "lint": "tsdx lint src test",
-    "prepare": "yarn lint && yarn build && yarn test",
+    "prepare": "yarn lint && yarn build",
     "publish:beta": "yarn publish --tag=beta"
   },
   "dependencies": {
