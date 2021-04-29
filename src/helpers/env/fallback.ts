@@ -1,9 +1,8 @@
 import aesJs from 'aes-js';
-import * as hash from 'hash.js';
 import { hexToArray } from 'enc-utils';
-
-import { SHA256_NODE_ALGO, HEX_ENC, SHA512_NODE_ALGO } from '../constants';
-import { pkcs7 } from '../index';
+import * as hash from 'hash.js';
+import { HEX_ENC, SHA256_NODE_ALGO, SHA512_NODE_ALGO } from '../constants';
+import { pkcs7 } from '../pkcs7';
 
 export function fallbackAesEncrypt(
   iv: Uint8Array,
