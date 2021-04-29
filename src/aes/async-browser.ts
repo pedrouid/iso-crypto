@@ -1,4 +1,4 @@
-import { browserAesDecrypt, browserAesEncrypt } from '../helpers';
+import { browserAesDecrypt, browserAesEncrypt } from '../helpers/env/browser';
 
 export function aesCbcEncrypt(
   iv: Uint8Array,
