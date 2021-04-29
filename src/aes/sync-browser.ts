@@ -1,4 +1,7 @@
-import { fallbackAesDecrypt, fallbackAesEncrypt } from '../helpers';
+import {
+  fallbackAesDecrypt,
+  fallbackAesEncrypt,
+} from '../helpers/env/fallback';
 
 export function aesCbcEncryptSync(
   iv: Uint8Array,
