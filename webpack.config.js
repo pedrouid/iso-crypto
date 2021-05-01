@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   mode: 'production',
   entry: {
-    index: path.resolve(__dirname, 'dist', 'cjs', 'index.js'),
+    index: path.resolve(__dirname, 'dist', 'cjs', 'index-fallback.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist', 'umd'),
