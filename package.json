@@ -15,18 +15,17 @@
   "files": [
     "dist"
   ],
-  "main": "dist/cjs/index-fallback.js",
-  "type": "module",
+  "main": "dist/cjs/node/index.js",
   "exports": {
     ".": {
-      "node": "./index-node.js",
-      "browser": "./index-browser.js",
-      "default": "./index-fallback.js"
+      "node": "./node/index.js",
+      "browser": "./browser/index.js",
+      "default": "./fallback/index.js"
     },
     "./sync": {
-      "node": "./sync-node.js",
-      "browser": "./sync-browser.js",
-      "default": "./sync-fallback.js"
+      "node": "./node/sync.js",
+      "browser": "./browser/sync.js",
+      "default": "./fallback/sync.js"
     }
   },
   "types": "dist/cjs/index.d.ts",
@@ -45,14 +44,15 @@
     "build:cjs": "yarn tsc -p tsconfig.cjs.json",
     "build:umd": "webpack",
     "build:esm": "yarn tsc -p tsconfig.esm.json",
-    "build": "yarn clean && yarn build:cjs && yarn build:umd && yarn build:esm",
-    "test": "echo test",
+    "build": "yarn clean && yarn build:cjs && yarn build:umd",
+    "test": "tsdx test",
     "lint": "tsdx lint src test",
     "prepare": "yarn lint && yarn build",
     "publish:beta": "yarn publish --tag=beta"
   },
   "dependencies": {
-    "@pedrouid/iso-random": "^1.1.0",
+    "@pedrouid/environment": "^1.0.1",
+    "@pedrouid/iso-random": "^1.1.1",
     "aes-js": "^3.1.2",
     "enc-utils": "^3.0.0",
     "hash.js": "^1.1.7"
