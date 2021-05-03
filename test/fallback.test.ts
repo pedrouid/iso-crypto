@@ -1,6 +1,8 @@
 import { Crypto } from '@peculiar/webcrypto';
 
-import * as isoCrypto from '../src/';
+import * as nodeCrypto from '../src/lib/node';
+import * as browserCrypto from '../src/lib/browser';
+import * as fallbackCrypto from '../src/lib/fallback';
 import {
   testRandomBytes,
   getTestMessageToEncrypt,
@@ -40,41 +42,41 @@ describe('Fallback', () => {
     });
 
     it('should encrypt successfully', async () => {
-      const ciphertext = isoCrypto.fallbackAesEncrypt(iv, key, data);
+      const ciphertext = fallbackCrypto.fallbackAesEncrypt(iv, key, data);
       expect(ciphertext).toBeTruthy();
     });
 
     it('should decrypt successfully', async () => {
-      const ciphertext = isoCrypto.fallbackAesEncrypt(iv, key, data);
-      const result = isoCrypto.fallbackAesDecrypt(iv, key, ciphertext);
+      const ciphertext = fallbackCrypto.fallbackAesEncrypt(iv, key, data);
+      const result = fallbackCrypto.fallbackAesDecrypt(iv, key, ciphertext);
       expect(result).toBeTruthy();
       expect(result).toEqual(data);
     });
 
     it('ciphertext should be decrypted by NodeJS', async () => {
-      const ciphertext = isoCrypto.fallbackAesEncrypt(iv, key, data);
-      const result = isoCrypto.nodeAesDecrypt(iv, key, ciphertext);
+      const ciphertext = fallbackCrypto.fallbackAesEncrypt(iv, key, data);
+      const result = nodeCrypto.nodeAesDecrypt(iv, key, ciphertext);
       expect(result).toBeTruthy();
       expect(result).toEqual(data);
     });
 
     it('should decrypt ciphertext from NodeJS', async () => {
-      const ciphertext = isoCrypto.nodeAesEncrypt(iv, key, data);
-      const result = isoCrypto.fallbackAesDecrypt(iv, key, ciphertext);
+      const ciphertext = nodeCrypto.nodeAesEncrypt(iv, key, data);
+      const result = fallbackCrypto.fallbackAesDecrypt(iv, key, ciphertext);
       expect(result).toBeTruthy();
       expect(result).toEqual(data);
     });
 
     it('ciphertext should be decrypted by Browser', async () => {
-      const ciphertext = isoCrypto.fallbackAesEncrypt(iv, key, data);
-      const result = await isoCrypto.browserAesDecrypt(iv, key, ciphertext);
+      const ciphertext = fallbackCrypto.fallbackAesEncrypt(iv, key, data);
+      const result = await browserCrypto.browserAesDecrypt(iv, key, ciphertext);
       expect(result).toBeTruthy();
       expect(result).toEqual(data);
     });
 
     it('should decrypt ciphertext from Browser', async () => {
-      const ciphertext = await isoCrypto.browserAesEncrypt(iv, key, data);
-      const result = isoCrypto.fallbackAesDecrypt(iv, key, ciphertext);
+      const ciphertext = await browserCrypto.browserAesEncrypt(iv, key, data);
+      const result = fallbackCrypto.fallbackAesDecrypt(iv, key, ciphertext);
       expect(result).toBeTruthy();
       expect(result).toEqual(data);
     });
@@ -91,13 +93,13 @@ describe('Fallback', () => {
       });
       it('should hash buffer sucessfully', async () => {
         const input = utf8ToArray(TEST_MESSAGE_STR);
-        const output = isoCrypto.fallbackSha256(input);
+        const output = fallbackCrypto.fallbackSha256(input);
         expect(output).toEqual(expectedOutput);
       });
 
       it('should output with expected length', async () => {
         const input = utf8ToArray(TEST_MESSAGE_STR);
-        const output = isoCrypto.fallbackSha256(input);
+        const output = fallbackCrypto.fallbackSha256(input);
         expect(output.length).toEqual(expectedLength);
       });
     });
@@ -113,13 +115,13 @@ describe('Fallback', () => {
 
       it('should hash buffer sucessfully', async () => {
         const input = utf8ToArray(TEST_MESSAGE_STR);
-        const output = isoCrypto.fallbackSha512(input);
+        const output = fallbackCrypto.fallbackSha512(input);
         expect(output).toEqual(expectedOutput);
       });
 
       it('should output with expected length', async () => {
         const input = utf8ToArray(TEST_MESSAGE_STR);
-        const output = isoCrypto.fallbackSha512(input);
+        const output = fallbackCrypto.fallbackSha512(input);
         expect(output.length).toEqual(expectedLength);
       });
     });
@@ -137,7 +139,7 @@ describe('Fallback', () => {
     let output: Uint8Array;
 
     beforeEach(async () => {
-      output = isoCrypto.fallbackHmacSha256Sign(macKey, dataToMac);
+      output = fallbackCrypto.fallbackHmacSha256Sign(macKey, dataToMac);
     });
 
     it('should sign sucessfully', async () => {

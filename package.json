@@ -44,7 +44,7 @@
     "build:cjs": "yarn tsc -p tsconfig.cjs.json",
     "build:umd": "webpack",
     "build:esm": "yarn tsc -p tsconfig.esm.json",
-    "build": "yarn clean && yarn build:cjs && yarn build:umd",
+    "build": "yarn clean && yarn build:cjs && yarn build:umd && yarn build:esm",
     "test": "tsdx test",
     "lint": "tsdx lint src test",
     "prepare": "yarn lint && yarn build",
