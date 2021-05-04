@@ -18,14 +18,14 @@
   "main": "dist/cjs/index.js",
   "exports": {
     ".": {
-      "node": "./node/index.js",
-      "browser": "./browser/index.js",
-      "default": "./fallback/index.js"
+      "node": "./dist/cjs/node/index.js",
+      "browser": "./dist/cjs/browser/index.js",
+      "default": "./dist/cjs/fallback/index.js"
     },
     "./sync": {
-      "node": "./node/sync.js",
-      "browser": "./browser/sync.js",
-      "default": "./fallback/sync.js"
+      "node": "./dist/cjs/node/sync.js",
+      "browser": "./dist/cjs/browser/sync.js",
+      "default": "./dist/cjs/fallback/sync.js"
     }
   },
   "types": "dist/cjs/index.d.ts",
@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@pedrouid/environment": "^1.0.1",
-    "@pedrouid/iso-random": "^1.2.0",
+    "@pedrouid/iso-random": "^1.2.1",
     "aes-js": "^3.1.2",
     "enc-utils": "^3.0.0",
     "hash.js": "^1.1.7"
