@@ -13,7 +13,8 @@
     "sha2"
   ],
   "files": [
-    "dist"
+    "dist",
+    "sync"
   ],
   "main": "dist/cjs/index.js",
   "exports": {
