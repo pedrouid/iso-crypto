@@ -16,7 +16,7 @@
     "dist",
     "sync"
   ],
-  "main": "dist/cjs/index.js",
+  "main": "dist/cjs/node/index.js",
   "exports": {
     ".": {
       "node": "./dist/cjs/node/index.js",
@@ -53,7 +53,7 @@
   },
   "dependencies": {
     "@pedrouid/environment": "^1.0.1",
-    "@pedrouid/iso-random": "^1.2.2-beta.1",
+    "@pedrouid/iso-random": "^2.0.0-beta.2",
     "aes-js": "^3.1.2",
     "enc-utils": "^3.0.0",
     "hash.js": "^1.1.7"

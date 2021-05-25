@@ -1101,10 +1101,10 @@
   resolved "https://registry.yarnpkg.com/@pedrouid/environment/-/environment-1.0.1.tgz#858f0f8a057340e0b250398b75ead77d6f4342ec"
   integrity sha512-HaW78NszGzRZd9SeoI3JD11JqY+lubnaOx7Pewj5pfjqWXOEATpeKIFb9Z4t2WBUK2iryiXX3lzWwmYWgUL0Ug==
 
-"@pedrouid/iso-random@^1.2.2-beta.1":
-  version "1.2.2-beta.1"
-  resolved "https://registry.yarnpkg.com/@pedrouid/iso-random/-/iso-random-1.2.2-beta.1.tgz#ddac159441353d8c2ac94565e575a15cef0d45b7"
-  integrity sha512-eqVk2TcZwMs06OU4wKtzUr/7Lc5TUPjBaVX3epEZrQCwuyYvlDs0XfxruVkmbw7RmSu8/auiNmzMeYBc2qIftQ==
+"@pedrouid/iso-random@^2.0.0-beta.2":
+  version "2.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@pedrouid/iso-random/-/iso-random-2.0.0-beta.2.tgz#62335ad0120cf0eb75ea68cbf1e5beea15a21b1d"
+  integrity sha512-7B+8d1e3ZlWa2rWnnrVxrvL4edFVJbtCm7EJd2T3KkYoSDsvf7AkgQIgRY6Ra1FJTFXh93wt0Nwvcq54+OHzkA==
   dependencies:
     "@pedrouid/environment" "^1.0.1"
     enc-utils "^3.0.0"
