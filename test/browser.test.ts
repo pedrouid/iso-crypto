@@ -1,6 +1,6 @@
 import { Crypto } from '@peculiar/webcrypto';
 
-import * as isoCrypto from '../src';
+import * as isoCrypto from '../src/node';
 import * as nodeCrypto from '../src/lib/node';
 import * as browserCrypto from '../src/lib/browser';
 import * as fallbackCrypto from '../src/lib/fallback';
