@@ -13,7 +13,8 @@
     "sha2"
   ],
   "files": [
-    "dist"
+    "dist",
+    "sync"
   ],
   "main": "dist/cjs/node/index.js",
   "module": "dist/esm/node/index.js",
