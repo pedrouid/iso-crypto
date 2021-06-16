@@ -17,6 +17,7 @@
     "sync"
   ],
   "main": "dist/cjs/node/index.js",
+  "react-native": "dist/cjs/node/index.js",
   "module": "dist/esm/node/index.js",
   "browser": "dist/esm/browser/index.js",
   "types": "./dist/cjs/node/index.d.ts",
@@ -25,12 +26,14 @@
     ".": {
       "types": "./dist/cjs/node/index.d.ts",
       "node": "./dist/cjs/node/index.js",
+      "react-native": "./dist/cjs/node/index.js",
       "browser": "./dist/esm/browser/index.js",
       "default": "./dist/cjs/fallback/index.js"
     },
     "./sync": {
       "types": "./dist/cjs/node/sync.d.ts",
       "node": "./dist/cjs/node/sync.js",
+      "react-native": "./dist/cjs/node/sync.js",
       "browser": "./dist/esm/browser/sync.js",
       "default": "./dist/cjs/fallback/sync.js"
     }
@@ -57,7 +60,7 @@
   },
   "dependencies": {
     "@pedrouid/environment": "^1.0.1",
-    "@pedrouid/iso-random": "^2.0.0-beta.5",
+    "@pedrouid/iso-random": "^2.0.0-beta.6",
     "aes-js": "^3.1.2",
     "enc-utils": "^3.0.0",
     "hash.js": "^1.1.7"
