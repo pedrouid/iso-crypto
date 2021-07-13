@@ -14,7 +14,11 @@ export function nodeAesEncrypt(
   key: Uint8Array,
   data: Uint8Array
 ): Uint8Array {
-  const cipher = crypto.createCipheriv(AES_NODE_ALGO, key, iv);
+  const cipher = crypto.createCipheriv(
+    AES_NODE_ALGO,
+    Buffer.from(key),
+    Buffer.from(iv)
+  );
   return bufferToArray(
     concatBuffers(cipher.update(Buffer.from(data)), cipher.final())
   );
@@ -25,7 +29,11 @@ export function nodeAesDecrypt(
   key: Uint8Array,
   data: Uint8Array
 ): Uint8Array {
-  const decipher = crypto.createDecipheriv(AES_NODE_ALGO, key, iv);
+  const decipher = crypto.createDecipheriv(
+    AES_NODE_ALGO,
+    Buffer.from(key),
+    Buffer.from(iv)
+  );
   return bufferToArray(
     concatBuffers(decipher.update(Buffer.from(data)), decipher.final())
   );
@@ -36,7 +44,7 @@ export function nodeHmacSha256Sign(
   data: Uint8Array
 ): Uint8Array {
   const buf = crypto
-    .createHmac(HMAC_NODE_ALGO, new Uint8Array(key))
+    .createHmac(HMAC_NODE_ALGO, Buffer.from(key))
     .update(Buffer.from(data))
     .digest();
   return bufferToArray(buf);
@@ -47,7 +55,7 @@ export function nodeHmacSha512Sign(
   data: Uint8Array
 ): Uint8Array {
   const buf = crypto
-    .createHmac(SHA512_NODE_ALGO, new Uint8Array(key))
+    .createHmac(SHA512_NODE_ALGO, Buffer.from(key))
     .update(Buffer.from(data))
     .digest();
   return bufferToArray(buf);
