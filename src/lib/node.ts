@@ -15,7 +15,9 @@ export function nodeAesEncrypt(
   data: Uint8Array
 ): Uint8Array {
   const cipher = crypto.createCipheriv(AES_NODE_ALGO, key, iv);
-  return bufferToArray(concatBuffers(cipher.update(data), cipher.final()));
+  return bufferToArray(
+    concatBuffers(cipher.update(Buffer.from(data)), cipher.final())
+  );
 }
 
 export function nodeAesDecrypt(
@@ -24,7 +26,9 @@ export function nodeAesDecrypt(
   data: Uint8Array
 ): Uint8Array {
   const decipher = crypto.createDecipheriv(AES_NODE_ALGO, key, iv);
-  return bufferToArray(concatBuffers(decipher.update(data), decipher.final()));
+  return bufferToArray(
+    concatBuffers(decipher.update(Buffer.from(data)), decipher.final())
+  );
 }
 
 export function nodeHmacSha256Sign(
@@ -33,7 +37,7 @@ export function nodeHmacSha256Sign(
 ): Uint8Array {
   const buf = crypto
     .createHmac(HMAC_NODE_ALGO, new Uint8Array(key))
-    .update(data)
+    .update(Buffer.from(data))
     .digest();
   return bufferToArray(buf);
 }
@@ -44,7 +48,7 @@ export function nodeHmacSha512Sign(
 ): Uint8Array {
   const buf = crypto
     .createHmac(SHA512_NODE_ALGO, new Uint8Array(key))
-    .update(data)
+    .update(Buffer.from(data))
     .digest();
   return bufferToArray(buf);
 }
@@ -52,7 +56,7 @@ export function nodeHmacSha512Sign(
 export function nodeSha256(data: Uint8Array): Uint8Array {
   const buf = crypto
     .createHash(SHA256_NODE_ALGO)
-    .update(data)
+    .update(Buffer.from(data))
     .digest();
   return bufferToArray(buf);
 }
@@ -60,7 +64,7 @@ export function nodeSha256(data: Uint8Array): Uint8Array {
 export function nodeSha512(data: Uint8Array): Uint8Array {
   const buf = crypto
     .createHash(SHA512_NODE_ALGO)
-    .update(data)
+    .update(Buffer.from(data))
     .digest();
   return bufferToArray(buf);
 }
@@ -68,7 +72,7 @@ export function nodeSha512(data: Uint8Array): Uint8Array {
 export function nodeRipemd160(data: Uint8Array): Uint8Array {
   const buf = crypto
     .createHash(RIPEMD160_NODE_ALGO)
-    .update(data)
+    .update(Buffer.from(data))
     .digest();
   return bufferToArray(buf);
 }
