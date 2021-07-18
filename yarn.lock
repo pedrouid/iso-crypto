@@ -1096,11 +1096,17 @@
     tslib "^2.0.1"
     webcrypto-core "^1.1.6"
 
-"@pedrouid/iso-random@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@pedrouid/iso-random/-/iso-random-1.1.0.tgz#4b9561670fcb31a45e8520852f1bfac34316b111"
-  integrity sha512-U8P2qdbvyU5aom0036dkpp0C9c8pgW1SNhAo8+zPDzgmKA58Hl6dc+ZkQXkE9aHrzN6v/0w+409JMjSYwx5tVw==
+"@pedrouid/environment@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@pedrouid/environment/-/environment-1.0.1.tgz#858f0f8a057340e0b250398b75ead77d6f4342ec"
+  integrity sha512-HaW78NszGzRZd9SeoI3JD11JqY+lubnaOx7Pewj5pfjqWXOEATpeKIFb9Z4t2WBUK2iryiXX3lzWwmYWgUL0Ug==
+
+"@pedrouid/iso-random@^2.0.0-beta.6":
+  version "2.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@pedrouid/iso-random/-/iso-random-2.0.0-beta.6.tgz#38a5974b19f1180af99964c84685383bb7c04db5"
+  integrity sha512-y2oAAPULxBWVSF2FLA0veB/qAfclbyJqepxx2p9/dT4166B+iVfIO5Y+YBXo3t9yhKfSpjdg8lJcd4Cyfe2Yvg==
   dependencies:
+    "@pedrouid/environment" "^1.0.1"
     enc-utils "^3.0.0"
     randombytes "^2.1.0"
 

@@ -1,5 +1,5 @@
 import { hexToArray, utf8ToArray } from 'enc-utils';
-import * as isoCrypto from '../src';
+import * as isoCrypto from '../src/node';
 import { TEST_MESSAGE_STR, TEST_SHA256_HASH, TEST_SHA512_HASH } from './common';
 
 describe('SHA256', () => {

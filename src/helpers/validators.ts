@@ -1,21 +1,7 @@
-import { getBrowerCrypto, getSubtleCrypto } from './env';
-
 export function assert(condition: boolean, message: string): void {
   if (!condition) {
     throw new Error(message || 'Assertion failed');
   }
-}
-
-export function isBrowser(): boolean {
-  return !!getBrowerCrypto() && !!getSubtleCrypto();
-}
-
-export function isNode(): boolean {
-  return (
-    typeof process !== 'undefined' &&
-    typeof process.versions !== 'undefined' &&
-    typeof process.versions.node !== 'undefined'
-  );
 }
 
 export function isConstantTime(arr1: Uint8Array, arr2: Uint8Array): boolean {
